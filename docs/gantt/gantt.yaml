@@ -1,0 +1,77 @@
+show-today: false
+# Either month or day
+viewport-snap: day
+# Can include `year`, `month`, `week`, or `day`
+headers:
+  - month
+  - week
+# A start date. Not required.
+start: 2025-03-24
+# An end date. Not required.
+end: 2025-06-13
+taskgroups:
+  - name: "Fase 1: Fundamentos e Inicio Bare-Metal"
+    tasks:
+      - name: "S1: Configuración Ambiente e Interacción Hardware Inicial"
+        start: 2025-03-24
+        end: 2025-03-28
+        details: "T1.1: Estudio datasheet RP2040/ARM Cortex-M0+. T1.2: Configurar toolchain. T1.3: Estructura proyecto y Git. T1.4: 'Hola Mundo' Bare-metal LED."
+      - name: "S2: Bootloader y Linker Script Personalizados"
+        start: 2025-03-31
+        end: 2025-04-04
+        details: "T2.1: Desarrollar Bootloader en Assembler. T2.2: Crear linker script manual. T2.3: Integrar bootloader y linker script."
+      - name: "S3: Driver Básico Comunicación UART"
+        start: 2025-04-07
+        end: 2025-04-11
+        details: "T3.1: Estudiar datasheet UART. T3.2: Implementar driver UART0 (TX). T3.3: Probar TX UART. T3.4: Implementar driver UART0 (RX polling)."
+  - name: "Fase 2: Características Centrales del Kernel - Interrupciones y Planificación"
+    tasks:
+      - name: "S4: Manejo de Timer e Interrupciones"
+        start: 2025-04-14
+        end: 2025-04-18
+        details: "T4.1: Estudiar datasheet Timer/NVIC. T4.2: Implementar driver Timer para tick. T4.3: Configurar NVIC para interrupciones timer. T4.4: Escribir ISR básico en C para timer."
+      - name: "S5: Bloques de Control de Tareas (TCB) y Cambio de Contexto"
+        start: 2025-04-21
+        end: 2025-04-25
+        details: "T5.1: Definir estructura TCB. T5.2: Diseñar stack frame. T5.3: Implementar cambio de contexto en Assembler. T5.4: Gestión básica de TCBs."
+      - name: "S6: Planificador Pre-emptive (Round-Robin)"
+        start: 2025-04-28
+        end: 2025-05-02
+        details: "T6.1: Implementar lógica planificador Round-Robin en C. T6.2: Crear 2+ tareas simples. T6.3: Pruebas y depuración multitarea. T6.4: Medición latencia cambio contexto."
+  - name: "Fase 3: Shell Interactiva y Comandos del Sistema"
+    tasks:
+      - name: "S7: Framework Shell y Comandos Básicos"
+        start: 2025-05-05
+        end: 2025-05-09
+        details: "T7.1: Diseñar shell como tarea concurrente. T7.2: Implementar lectura línea UART. T7.3: Parseo básico de comandos. T7.4: Implementar comando 'help'."
+      - name: "S8: Comandos de Acceso a Memoria y Control GPIO"
+        start: 2025-05-12
+        end: 2025-05-16
+        details: "T8.1: Funciones aux. string-hex. T8.2: Comando 'peek'. T8.3: Comando 'poke'. T8.4: Refinar driver GPIO. T8.5: Comando 'gpio set'."
+      - name: "S9: Comando Información de Tareas e Integración Shell"
+        start: 2025-05-19
+        end: 2025-05-23
+        details: "T9.1: Comando 'show-tasks'. T9.2: Integrar comandos shell. T9.3: Probar responsividad shell."
+  - name: "Fase 4: Pruebas, Refinamiento y Documentación"
+    tasks:
+      - name: "S10: Pruebas del Sistema y Ajuste de Rendimiento"
+        start: 2025-05-26
+        end: 2025-05-30
+        details: "T10.1: Pruebas funcionales exhaustivas. T10.2: Medir overhead scheduler. T10.3: Optimizar uso RAM. T10.4: Asegurar cumplimiento restricciones."
+      - name: "S11: Limpieza de Código, Modularización e Inicio Documentación"
+        start: 2025-06-02
+        end: 2025-06-06
+        details: "T11.1: Corregir bugs. T11.2: Refactorizar código. T11.3: Comentar código. T11.4: Iniciar documentación proyecto."
+  - name: "Fase 5: Finalización y Entrega"
+    tasks:
+      - name: "S12: Documentación Final y Cierre del Proyecto"
+        start: 2025-06-09
+        end: 2025-06-13
+        details: "T12.1: Completar documentación. T12.2: Revisión final código. T12.3: Preparar demo. T12.4: Finalizar commits y taggear release."
+milestones:
+  - name: "Hito 1: Primer Kernel Multitarea Funcional"
+    date: 2025-05-02
+  - name: "Hito 2: Shell Interactiva con Comandos Implementada"
+    date: 2025-05-23
+  - name: "Hito 3: Entrega Final del Proyecto"
+    date: 2025-06-13
